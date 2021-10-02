@@ -21,6 +21,7 @@ app.use(express.static(`${__dirname}/public`))
 
 const port = process.env.PORT || 5000;
 const YOUR_DOMAIN = `http://localhost:${port}`;
+const herokup=`https://guarded-headland-72288.herokuapp`;
 
 //INDEX route
 app.get('/', (req,res) => {
