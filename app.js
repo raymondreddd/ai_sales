@@ -11,7 +11,7 @@ const app =express()
 app.engine('handlebars',exphbs({defaultLayout:'main'}))
 app.set('view engine','handlebars')
 
-
+console.log(keys.stripeSecretKey);
 //Bodyparser
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
