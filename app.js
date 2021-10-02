@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 //Static folder
 app.use(express.static(`${__dirname}/public`))
 
-const port = process.envPORT || 5000;
+const port = process.env.PORT || 5000;
 const YOUR_DOMAIN = `http://localhost:${port}`;
 
 //INDEX route
@@ -49,8 +49,8 @@ app.post('/create-checkout-session', async (req, res) => {
         'card',
       ],
       mode: 'payment',
-      success_url: res.redirect('success'),
-      cancel_url:  res.redirect('cancel'),
+      success_url: `${YOUR_DOMAIN}/success`,
+      cancel_url:  `${YOUR_DOMAIN}/cancel`,
     });
     res.redirect(303, session.url)
   });
