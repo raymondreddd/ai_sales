@@ -20,7 +20,8 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(express.static(`${__dirname}/public`))
 
 const port = process.env.PORT || 5000;
-const YOUR_DOMAIN = `http://localhost:${port}`;
+
+const YOUR_DOMAIN = keys.your_domain;
 const herokup=`https://guarded-headland-72288.herokuapp`;
 
 //INDEX route
