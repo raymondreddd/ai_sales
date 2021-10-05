@@ -4,12 +4,13 @@ const keys = require('./config/keys')
 const stripe = require('stripe')(keys.stripeSecretKey);
 const bodyParser= require('body-parser')
 const exphbs = require('express-handlebars')
-
+const Cors= require('cors')
 const app =express()
 
 //Handlebar Middlebars
 app.engine('handlebars',exphbs({defaultLayout:'main'}))
 app.set('view engine','handlebars')
+app.use(Cors())
 
 console.log(keys.stripeSecretKey);
 //Bodyparser
